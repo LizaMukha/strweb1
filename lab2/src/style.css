@@ -1,0 +1,110 @@
+/* Общие стили */
+body {
+    background-color: #f0f0f0; /* Выберите цвет фона */
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 1440px;
+    margin: 0 auto;
+    background-color: #fff; /* Цвет фона контента */
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+.movie {
+    margin-bottom: 30px;
+}
+
+/* Стили для якорных ссылок */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li a {
+    color: black;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Стили для изображений */
+.movie img {
+    width: 300px;
+    height: 200px;
+    border-radius: 15px; /* Закругленные края */
+    margin-right: 10px;
+}
+
+/* Подключение и использование шрифтов */
+@font-face {
+    font-family: 'HZ';
+    src: url('fonts/hz.ttf');
+}
+
+@font-face {
+    font-family: 'DD';
+    src: url('fonts/dd.ttf');
+}
+
+@font-face {
+    font-family: 'DB';
+    src: url('fonts/db.ttf');
+}
+
+/* Применение шрифтов для каждого фильма */
+#movie1 {
+    font-family: 'HZ';
+    text-align: center;
+}
+
+#movie2 {
+    font-family: 'DD';
+    text-align: justify;
+}
+
+#movie3 {
+    font-family: 'DB';
+    text-align: left;
+}
+
+/* Таблица стилей */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+/* Жирное начертание текста */
+strong {
+    font-weight: bold;
+}
+
+.bold-text {
+    font-weight: 700;
+}
