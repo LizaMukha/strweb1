@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+
+.ball {
+    width: 50px;
+    height: 50px;
+    background-color: #069106;
+    border-radius: 50%;
+    position: relative;
+    animation: bounce 4s ease-in forwards; 
+}
+
+@keyframes bounce {
+    0% {
+        top: 0; 
+    }
+    15% {
+    transform: scaleY(1);
+    }
+    20% {
+        top: 70vh; 
+        transform: scaleY(0.7);
+    }
+    25% {
+        transform: scaleY(1);
+        }
+    30% {
+        top: 50vh;
+    }
+    35% {
+        transform: scaleY(1);
+    }
+    40% {
+        top: 70vh;
+        transform: scaleY(0.75);
+    }
+    45% {
+        transform: scaleY(1);
+    }
+    50% {
+        top: 60vh;
+    }
+    55% {
+        transform: scaleY(1);
+    }
+    60% {
+        top: 70vh;
+        transform: scaleY(0.8);
+    }
+    65% {
+        transform: scaleY(1);
+    }
+    70% {
+        top: 65vh;
+    }
+    75% {
+        transform: scaleY(1);
+    }
+    80% {
+        top: 70vh;
+        transform: scaleY(0.9);
+    }
+    90% {
+        top: 67vh;
+        transform: scaleY(1);
+    }
+    95% {
+        top: 70vh;
+    }
+    100% {
+        top: 70vh;
+        transform: scaleY(1);
+    }
+}
+
