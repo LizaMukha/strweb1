@@ -1,55 +1,78 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Анкета для друзей</title>
     <link rel="stylesheet" href="style.css">
+    <title>Flex</title>
 </head>
 <body>
-<h1>Анкета для друзей</h1>
-<form action="/submit" method="post">
-    <fieldset>
-        <legend>Личные данные</legend>
+<header>
+    <h1>Изучаем flexbox</h1>
+</header>
+<div class="flex-group-1">
+    <article>
+        <h2>1</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta, perspiciatis quo praesentium harum quibusdam nostrum aliquam voluptates ullam aliquid, dolor consectetur expedita, nisi mollitia reiciendis deleniti sit natus quos est.
+        </p>
+    </article>
+    <article>
+        <h2>2</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta, perspiciatis quo praesentium harum quibusdam nostrum aliquam voluptates ullam aliquid, dolor consectetur expedita, nisi mollitia reiciendis deleniti sit natus quos est.
+        </p>
+    </article>
+    <article>
+        <h2>3</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta, perspiciatis quo praesentium harum quibusdam nostrum aliquam voluptates ullam aliquid, dolor consectetur expedita, nisi mollitia reiciendis deleniti sit natus quos est.
+        </p>
+    </article>
+</div>
+<div class="flex-group-2-3-4-5">
+    <div class="flex-group-2">
+        <article>
+            <h2>4</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta, perspiciatis quo praesentium harum quibusdam nostrum aliquam voluptates ullam aliquid, dolor consectetur expedita, nisi mollitia reiciendis deleniti sit natus quos est.
+            </p>
+        </article>
+        <article>
+            <h2>5</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta, perspiciatis quo praesentium harum quibusdam nostrum aliquam voluptates ullam aliquid, dolor consectetur expedita, nisi mollitia reiciendis deleniti sit natus quos est.
+            </p>
+        </article>
+        <article>
+            <h2>6</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta, perspiciatis quo praesentium harum quibusdam nostrum aliquam voluptates ullam aliquid, dolor consectetur expedita, nisi mollitia reiciendis deleniti sit natus quos est.
+            </p>
+        </article>
+    </div>
+    <div class="flex-group-5">
+        <div class="flex-group-3">
+            <article>
+                <h2>7</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta, perspiciatis quo praesentium harum quibusdam nostrum aliquam voluptates ullam aliquid, dolor consectetur expedita, nisi mollitia reiciendis deleniti sit natus quos est.
+                </p>
+            </article>
+            <article>
+                <h2>8</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta, perspiciatis quo praesentium harum quibusdam nostrum aliquam voluptates ullam aliquid, dolor consectetur expedita, nisi mollitia reiciendis deleniti sit natus quos est.
+                </p>
+            </article>
+        </div>
+        <div class="flex-group-4">
+            <article>
+                <h2>9</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta, perspiciatis quo praesentium harum quibusdam nostrum aliquam voluptates ullam aliquid, dolor consectetur expedita, nisi mollitia reiciendis deleniti sit natus quos est.
+                </p>
+            </article>
+            <article>
+                <h2>10</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta, perspiciatis quo praesentium harum quibusdam nostrum aliquam voluptates ullam aliquid, dolor consectetur expedita, nisi mollitia reiciendis deleniti sit natus quos est.
+                </p>
+            </article>
+        </div>
+    </div>
+</div>
 
-        <label for="name">Ваше имя:</label>
-        <input type="text" id="name" name="name" required><br><br>
-
-        <label for="email">Ваш email:</label>
-        <input type="email" id="email" name="email" required><br><br>
-
-        <label for="phone">Телефон:</label>
-        <input type="tel" id="phone" name="phone"><br><br>
-    </fieldset>
-
-    <fieldset>
-        <legend>Предпочтения</legend>
-
-        <label for="like_movies">Любите ли вы смотреть фильмы?</label>
-        <input type="checkbox" id="like_movies" name="like_movies"><br><br>
-
-        <label for="favorite_genre">Ваш любимый жанр фильма:</label>
-        <input type="text" id="favorite_genre" name="favorite_genre"><br><br>
-
-        <label>Выберите любимый способ общения:</label><br>
-        <input type="radio" id="chat" name="communication" value="chat">
-        <label for="chat">Чат</label><br>
-        <input type="radio" id="call" name="communication" value="call">
-        <label for="call">Звонок</label><br><br>
-    </fieldset>
-
-    <fieldset>
-        <legend>Дополнительная информация</legend>
-
-        <label for="profile_picture">Загрузите ваше фото:</label>
-        <input type="file" id="profile_picture" name="profile_picture"><br><br>
-
-        <label for="password">Введите пароль:</label>
-        <input type="password" id="password" name="password" required><br><br>
-    </fieldset>
-
-    <input type="submit" value="Отправить">
-    <input type="reset" value="Сбросить">
-</form>
 </body>
 </html>
