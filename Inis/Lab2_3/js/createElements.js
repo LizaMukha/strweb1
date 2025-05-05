@@ -30,10 +30,10 @@ export function createElements(shirts) {
             elementName: 'img',
             className: 'card-img',
         });
-        if (!shirts[i].colors?.pink?.front){
+        if (!shirts[i].colors?.white?.front){
             cardImg.src = shirts[i].default.front;
         } else {
-        cardImg.src = shirts[i].colors.pink.front;
+        cardImg.src = shirts[i].colors.white.front;
         }
         card.append(cardImg);
 

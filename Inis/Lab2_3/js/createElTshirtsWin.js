@@ -2,155 +2,114 @@ import { createElement } from "./utils.js";
 
 const selectedShirt = JSON.parse(localStorage.getItem("selectedShirt"));
 
-// T-shirts window
-
 export function createElements() {
-
-   const tshirtsWindowCont = createElement({
-       elementName: 'div',
-       className: 'tshirts-window-cont',
-       inner: selectedShirt.name,
-   });
-   document.body.append(tshirtsWindowCont);
-
-   const bigShirtsCard = createElement({
-       elementName: 'div',
-       className: 'big-shirts-card',
-       
-   });
-   tshirtsWindowCont.append(bigShirtsCard);
+    let currentSide = 'front';
+    let currentColor = 'white';
 
 
-   const bigCardInf = createElement({
-       elementName: 'div',
-       className: 'big-card-inf',
-   });
-   bigShirtsCard.append(bigCardInf);
+    const tshirtsWindowCont = createElement({
+        elementName: 'div',
+        className: 'tshirts-window-cont',
+        inner: selectedShirt.name,
+    });
+    document.body.append(tshirtsWindowCont);
 
-   const bigPrice = createElement({
-       elementName: 'h3',
-       className: 'big-price',
-       inner: selectedShirt.price,
-   });
-   bigCardInf.append(bigPrice);
+    const bigShirtsCard = createElement({
+        elementName: 'div',
+        className: 'big-shirts-card',
+    });
+    tshirtsWindowCont.append(bigShirtsCard);
 
-   const cardDesc = createElement({
-           elementName: 'span',
-           className: 'card-desc',
-           inner: selectedShirt.description,
-   });
-   bigCardInf.append(cardDesc);
+    const bigCardInf = createElement({
+        elementName: 'div',
+        className: 'big-card-inf',
+    });
+    bigShirtsCard.append(bigCardInf);
 
-   const bigSide = createElement({
-       elementName: 'div',
-       className: 'big-side',
-       inner: 'Side:'
-   });
-   bigCardInf.append(bigSide);
+    const bigPrice = createElement({
+        elementName: 'h3',
+        className: 'big-price',
+        inner: selectedShirt.price,
+    });
+    bigCardInf.append(bigPrice);
 
-   const front = createElement({
-       elementName: 'button',
-       className: 'btn-side',
-       inner: 'Front',
-   });
+    const cardDesc = createElement({
+        elementName: 'span',
+        className: 'card-desc',
+        inner: selectedShirt.description,
+    });
+    bigCardInf.append(cardDesc);
 
-   bigSide.append(front);
-   front.addEventListener('click', () => {
-       bigImg.src = `../${selectedShirt.default.front}`;
-   });
+    const bigSide = createElement({
+        elementName: 'div',
+        className: 'big-side',
+        inner: 'Side:'
+    });
+    bigCardInf.append(bigSide);
 
-   const back = createElement({
-       elementName: 'button',
-       className: 'btn-side',
-       inner: 'Back',
-   });
-   
-   bigSide.append(back);
-   back.addEventListener('click', () => {
-       bigImg.src = `../${selectedShirt.default.back}`;
-   });
+    const front = createElement({
+        elementName: 'button',
+        className: 'btn-side',
+        inner: 'Front',
+    });
+    bigSide.append(front);
 
-   const bigColor = createElement({
-       elementName: 'div',
-       className: 'big-color',
-       inner: 'Color:'
-   })
-   bigCardInf.append(bigColor);
+    const back = createElement({
+        elementName: 'button',
+        className: 'btn-side',
+        inner: 'Back',
+    });
+    bigSide.append(back);
 
-   const colors = Object.keys(selectedShirt.colors);
-   for (let i = 0; i < colors.length; i ++){
-   const btnColor = createElement({
-       elementName: 'button',
-       className: 'btn-color',
-       inner: colors[i],
-   });
+    const bigColor = createElement({
+        elementName: 'div',
+        className: 'big-color',
+        inner: 'Color:'
+    });
+    bigCardInf.append(bigColor);
 
-   switch (colors[i]) {
-       case 'white':
-           btnColor.style.backgroundColor = 'white';
-           btnColor.style.color = 'black';
-           btnColor.addEventListener('click', () => {
-               bigImg.src = `../${selectedShirt.colors.white.front}`;
-           });
-           break;
-       case 'pink':
-           btnColor.style.backgroundColor = 'pink';
-           btnColor.style.color = 'black';
-           btnColor.addEventListener('click', () => {
-               bigImg.src = `../${selectedShirt.colors.pink.front}`;
-           });
-           break;
-       case 'blue':
-           btnColor.style.backgroundColor = 'blue';
-           btnColor.addEventListener('click', () => {
-               bigImg.src = `../${selectedShirt.colors.blue.front}`;
-           });
-           break;
-       case 'red':
-           btnColor.style.backgroundColor = 'red';
-           btnColor.addEventListener('click', () => {
-               bigImg.src = `../${selectedShirt.colors.red.front}`;
-           });
-           break;
-       case 'green':
-           btnColor.style.backgroundColor = 'green';
-           btnColor.addEventListener('click', () => {
-               bigImg.src = `../${selectedShirt.colors.green.front}`;
-           });
-           break;
-       case 'yellow':
-           btnColor.style.backgroundColor = 'yellow';
-           btnColor.addEventListener('click', () => {
-               bigImg.src = `../${selectedShirt.colors.yellow.front}`;
-           });
-           break;
-       default:
-           btnColor.style.backgroundColor = 'gray';
-           btnColor.style.color = 'black';
-           btnColor.addEventListener('click', () => {
-               bigImg.src = `../${selectedShirt.colors.gray.front}`;
-           });
-   }
+    const bigImg = createElement({
+        elementName: 'img',
+        className: 'big-img',
+    });
+    bigShirtsCard.append(bigImg);
 
-   bigColor.append(btnColor);
-   }
-   
+    function updateImage() {
+        const colorSet = selectedShirt.colors?.[currentColor] || selectedShirt.default;
+        bigImg.src = `../${colorSet[currentSide]}`;
+    }
 
+    front.addEventListener('click', () => {
+        currentSide = 'front';
+        updateImage();
+    });
 
-   // IMG 
+    back.addEventListener('click', () => {
+        currentSide = 'back';
+        updateImage();
+    });
 
-   const bigImg = createElement({
-       elementName: 'img',
-       className: 'big-img',
-       
-   });
-   if (front.innerHTML == "Front") {
-       bigImg.src = `../${selectedShirt.default.front}`;
-   } else bigImg.src = `../${selectedShirt.default.back}`;
-   bigShirtsCard.append(bigImg);
+    const colors = Object.keys(selectedShirt.colors);
+    for (let i = 0; i < colors.length; i++) {
+        const color = colors[i];
+        const btnColor = createElement({
+            elementName: 'button',
+            className: 'btn-color',
+            inner: color,
+        });
 
-   
+        btnColor.style.backgroundColor = color;
+        if (['white', 'pink', 'yellow', 'gray'].includes(color)) {
+            btnColor.style.color = 'black';
+        }
 
+        btnColor.addEventListener('click', () => {
+            currentColor = color;
+            updateImage();
+        });
 
+        bigColor.append(btnColor);
+    }
 
+    updateImage();
 }
